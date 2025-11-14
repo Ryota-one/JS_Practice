@@ -32,4 +32,7 @@ const calc = (num,func) => {
 }
 
 console.log(calc(5,plus1));
-
+console.log(calc(5,(num) => {
+    return num * 2;
+}));
+console.log(calc(5,num => num * 3));
