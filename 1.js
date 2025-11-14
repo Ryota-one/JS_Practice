@@ -66,3 +66,8 @@ document.querySelector('button').addEventListener('click',() => {
 document.querySelector('button').addEventListener('click', () => {
     document.querySelector('p').classList.add('pink-bg');
 });
+
+//toggleメソッドを使ってCSSスタイルの追加と削除が可能。
+document.querySelector('button').addEventListener('click', () => {
+    document.querySelector('p').classList.toggle('pink-bg');
+});
