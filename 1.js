@@ -71,3 +71,35 @@ document.querySelector('button').addEventListener('click', () => {
 document.querySelector('button').addEventListener('click', () => {
     document.querySelector('p').classList.toggle('pink-bg');
 });
+
+//querySelectorAllを使って複数のHTML要素を取得可能(querySelectorは最初の1つの要素のみ取得)
+document.querySelectorAll('button').addEventListener('click', () => {
+    document.querySelectorAll('li').forEach((li) => {
+        li.textContent = 'changed!';
+    });
+});
+
+//cssクラスを指定して複数のHTML要素を取得可能
+document.querySelectorAll('button').addEventListener('click', () => {
+    document.querySelectorAll('.target .target2').forEach((li) => {
+        li.textContent = 'changed!';
+    });
+});
+
+
+//createElementメソッドを使ってHTML要素を作成可能
+//appendChildメソッドを使ってHTML要素を追加可能
+document.querySelector('button').addEventListener('click', ()=>{
+    const li = document.createElement('li');
+    li.textContent = 'new item';
+    document.querySelector('ul').appendChild(li);
+});
+
+//removeChildメソッドを使ってHTML要素を削除可能
+document.querySelector('button').addEventListener('click', ()=>{
+    const li = document.createElement('li');
+    li.textContent = 'new item';
+    if(confirm('削除しますか？') === true){
+        document.querySelector('ul').removeChild(li);
+    }
+});
