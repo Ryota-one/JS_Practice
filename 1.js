@@ -103,3 +103,67 @@ document.querySelector('button').addEventListener('click', ()=>{
         document.querySelector('ul').removeChild(li);
     }
 });
+
+//ラジオボタンの値を取得する
+document.querySelector('button').addEventListener('click',() => {
+    document.querySelectorAll('input').forEach((radio) => {
+        if(radio.checked === true){
+            alert(radio.value);
+        }
+    });
+});
+
+//チェックボックスの値を取得する
+document.querySelector('button').addEventListener('click',() => {
+    const  colors = [];
+    document.querySelectorAll('input').forEach((checkbox) => {
+        if(checkbox.checked === true){
+            alert(checkbox.value);
+        }
+    });
+    alert(colors.join(', '));
+});
+//focusイベントを使って入力欄にフォーカスが当たった時に処理を実行
+document.querySelector('input').addEventListener('focus',() => {
+    document.querySelector('p').textContent = 'English only';
+});
+//blurイベントを使って入力欄からフォーカスが外れた時に処理を実行
+document.querySelector('input').addEventListener('blur',() => {
+    document.querySelector('p').textContent = '入力ありがとうございました';
+});
+//focusメソッドを使って入力欄にフォーカスを当てる
+document.querySelector('input').focus();
+
+
+//keydownイベントを使ってキーボードのキーが押された時に処理を実行
+document.addEventListener('keydown',(e) => {
+    document.querySelector('p').textContent = e.key;
+});
+
+
+//mousemoveイベントを使ってマウスが動いた時に処理を実行
+document.addEventListener('mousemove',(e) => {
+    document.querySelector('p').textContent = `X座標:${e.clientX} Y座標:${e.clientY}`;
+})
+
+
+//submitイベントを使ってフォームが送信された時に処理を実行
+document.querySelector('form').addEventListener('submit',(e) => {
+    e.preventDefault();
+    document.querySelector('p').textContent = document.querySelector('input').value;
+});
+
+
+//画像のURLを変更する
+document.querySelector('img').src = 'https://picsum.photos/200/300';
+
+//hrefプロパティを使ってリンク先のURLを変更する
+document.querySelector('a').href = 'https://www.yahoo.co.jp/';
+
+//styleプロパティを使ってHTML要素のスタイルを変更する
+document.querySelector('p').style.color = 'red';
+document.querySelector('p').style.fontSize = '20px';
+
+//checkedプロパティを使ってチェックボックスやラジオボタンの選択状態を変更する
+document.querySelector('input[type="checkbox"]').checked = true;
+document.querySelector('input[type="radio"][value="option2"]').checked = true;
