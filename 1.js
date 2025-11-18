@@ -167,3 +167,4 @@ document.querySelector('p').style.fontSize = '20px';
 //checkedプロパティを使ってチェックボックスやラジオボタンの選択状態を変更する
 document.querySelector('input[type="checkbox"]').checked = true;
 document.querySelector('input[type="radio"][value="option2"]').checked = true;
+
